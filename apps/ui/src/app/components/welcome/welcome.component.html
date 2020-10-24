@@ -1,0 +1,5 @@
+<ng-container *ngIf="(userService.user$ | async) as user">
+  <div class="alert alert-info alert-dismissible fade show" role="alert">
+    Welcome <strong>{{user.name}}</strong>
+  </div>
+</ng-container>

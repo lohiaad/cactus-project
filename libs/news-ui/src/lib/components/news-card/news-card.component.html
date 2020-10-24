@@ -1,0 +1,23 @@
+<div>
+  <div class="h3">{{category | titlecase}} News</div>
+  <ng-container *ngIf="(news$ | async) as newsList; else loadingBlock">
+    <div *ngFor="let news of newsList; let i = index">
+      <ng-container [ngTemplateOutlet]="news.isHeadline ? headlineNews : normalNews" [ngTemplateOutletContext]="{news:news}">
+      </ng-container>
+      <hr />
+    </div>
+  </ng-container>
+</div>
+<ng-template #headlineNews let-news="news">
+  <cactus-headline-news [news]="news"></cactus-headline-news>
+</ng-template>
+<ng-template #normalNews let-news="news">
+  <cactus-normal-news [news]="news"></cactus-normal-news>
+</ng-template>
+<ng-template #loadingBlock>
+  <div class="text-center my-4">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</ng-template>

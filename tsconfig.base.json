@@ -15,7 +15,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@cactus/environment-ui": ["apps/ui/src/environments/environment.ts"],
+      "@cactus/services": ["libs/services/src/index.ts"],
+      "@cactus/news-ui": ["libs/news-ui/src/index.ts"],
+      "@cactus/shared": ["libs/shared/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -4,5 +4,10 @@
     "outDir": "../../dist/out-tsc",
     "types": []
   },
+  "angularCompilerOptions": {
+    "strictInjectionParameters": true,
+    "strictTemplates": true,
+    "enableIvy": false
+  },
   "files": ["src/main.ts", "src/polyfills.ts"]
 }
